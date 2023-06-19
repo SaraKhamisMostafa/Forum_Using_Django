@@ -8,3 +8,10 @@
     <li> {{a.author}}:{{a}}</li>
     {%endfor%}
 </ul>
+<hr>
+<h4>Add New Answer</h4>
+<form  method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="add">
+</form>
