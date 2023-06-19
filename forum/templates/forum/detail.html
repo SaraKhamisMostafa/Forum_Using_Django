@@ -1,1 +1,7 @@
 <h3>{{data}}</h3>
+
+<ul>
+    {% for a in answers %}
+    <li> {{a.author}}:{{a}}</li>
+    {%endfor%}
+</ul>

@@ -1,7 +1,8 @@
 <h3>Forum App</h3>
-
+<a href="/questions/add"> Add New Question </a>
+<hr>
 <ul>
     {% for question in data %}
-    <li>{{question}}</li>
+    <li><a href="/questions/{{question.id}}">{{question.author}}-{{question}}</a></li>
     {% endfor %}
 </ul>
