@@ -33,3 +33,8 @@ def edit_question(request,id):
     else:
         form=QuestionForm(instance=data)  
     return render(request,'forum/edit.html',{'form': form})
+
+def delete_question(request,id):
+    data=Question.objects.get(id=id)
+    data.delete()
+    return redirect('/questions/')
