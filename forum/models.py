@@ -11,6 +11,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question
+    
+    class Meta:
+        ordering=["-id"]
 
 class Answer(models.Model):
     question=models.ForeignKey(Question,related_name='question_answer',on_delete=models.CASCADE)
@@ -20,3 +23,6 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.answer
+    
+    class Meta:
+        ordering=["-id"]
