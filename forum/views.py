@@ -22,3 +22,14 @@ def add_question(request):
     else:
         form=QuestionForm()  
     return render(request,'forum/add.html',{'form': form})
+
+def edit_question(request,id):
+    data=Question.objects.get(id=id)
+    if request.method=='POST':
+        form=QuestionForm(request.POST,instance=data)
+        if form.is_valid():
+            form.save()
+            return redirect('/questions/')
+    else:
+        form=QuestionForm(instance=data)  
+    return render(request,'forum/edit.html',{'form': form})

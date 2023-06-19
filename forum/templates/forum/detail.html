@@ -1,5 +1,7 @@
 <h3>{{data}}</h3>
-
+<a href="/questions/{{data.id}}/edit"> Edit </a>
+<hr>
+<h4>Answers</h4>
 <ul>
     {% for a in answers %}
     <li> {{a.author}}:{{a}}</li>
