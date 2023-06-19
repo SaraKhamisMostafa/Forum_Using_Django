@@ -8,8 +8,15 @@ class Question(models.Model):
     author=models.CharField(max_length=50)
     create_date=models.DateTimeField(default=timezone.now)
 
+
+    def __str__(self):
+        return self.question
+
 class Answer(models.Model):
     question=models.ForeignKey(Question,related_name='question_answer',on_delete=models.CASCADE)
     answer=models.TextField(max_length=3000)
     author=models.CharField(max_length=50)
     create_date=models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.answer
